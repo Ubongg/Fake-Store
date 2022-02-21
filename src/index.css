@@ -18,7 +18,6 @@
   --small-spacing: 0.5px;
 }
 body {
-  margin: 0;
   font-family: "Roboto", sans-serif;
   background: var(--mainWhite);
   overflow-x: hidden !important;
@@ -29,6 +28,7 @@ a {
   cursor: pointer;
   text-align: center;
   font-size: 0.9rem;
+  -webkit-appearance: none;
 }
 *,
 ::after,
@@ -60,7 +60,7 @@ li {
 }
 .nav-toggle {
   font-size: 1.8rem;
-  padding-top: 15px;
+  padding-top: 8px;
   color: var(--mainBlue);
   background: transparent;
   border-color: transparent;
@@ -762,6 +762,13 @@ hr {
   border: 1px solid var(--dark-blue);
   border-radius: var(--radius);
   padding: 10px;
+}
+
+/* 380px below */
+@media screen and (max-width: 380px) {
+  .amount-container {
+    padding-left: 0;
+  }
 }
 
 /* 990px above */
