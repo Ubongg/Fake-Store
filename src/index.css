@@ -108,7 +108,7 @@ li {
 
 /* home page */
 .home-row {
-  padding: 70px 28px 40px 28px;
+  padding: 70px 28px;
 }
 .home-col {
   max-width: 700px;
@@ -153,7 +153,7 @@ li {
 }
 .featured-products {
   background: var(--light-grey);
-  padding: 30px;
+  padding: 30px 28px 50px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,6 +183,7 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 30px;
 }
 .sliced-products .product {
   box-shadow: none;
@@ -212,7 +213,7 @@ li {
 }
 .reviews {
   background: #d9dbdb;
-  padding: 30px;
+  padding: 30px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,6 +237,7 @@ li {
   flex-wrap: wrap;
   flex-direction: row;
   margin-top: 40px;
+  padding-bottom: 50px;
 }
 .review-box {
   width: 340px;
@@ -488,6 +490,7 @@ li {
   width: 100%;
   /* box-shadow: var(--light-shadow); */
   background: var(--mainWhite);
+  margin-left: -30px;
   border-radius: var(--radius);
 }
 .single-img-bx img {
@@ -722,6 +725,7 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 15px;
 }
 
@@ -824,6 +828,7 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 70px 48px 80px 48px;
   }
   .home-col {
     margin-top: -50px;
@@ -832,7 +837,7 @@ hr {
     width: 48%;
   }
   .home-col h1 {
-    font-size: 50px;
+    font-size: 3rem;
   }
   .home-col a {
     padding: 15px;
@@ -884,11 +889,38 @@ hr {
     border-radius: var(--radius);
   }
 
+  /* featured products */
+  .featured-products-title-text {
+    font-size: 2.5rem;
+  }
+
+  /* reviews */
+  .review-boxes {
+    padding-bottom: 50px;
+  }
+  .reviews h2 {
+    font-size: 2.5rem;
+  }
+
+  /* newsletter */
+  .newsletter h3 {
+    font-size: 2rem;
+  }
+  .subscribe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 8rem;
+    margin-top: 1rem;
+  }
+
   /* about page */
   .row {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 70px 35px;
   }
   .col-50 {
     width: 48%;

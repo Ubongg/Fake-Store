@@ -4,13 +4,26 @@ const AppContext = React.createContext();
 
 const url = "https://fakestoreapi.com/products";
 
+const getLocalStorage = () => {
+  let cart = localStorage.getItem("cart");
+  if (cart) {
+    return (cart = JSON.parse(localStorage.getItem("cart")));
+  } else {
+    return [];
+  }
+};
+
 const AppProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(getLocalStorage());
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
 
   let componentMounted = true;
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   useEffect(() => {
     const getProducts = async () => {
