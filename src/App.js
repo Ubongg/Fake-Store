@@ -7,6 +7,7 @@ import ProductList from "./pages/ProductList";
 import CartContainer from "./pages/CartContainer";
 import Error from "./pages/Error";
 import Footer from "./components/Footer";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<CartContainer />} />
         <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

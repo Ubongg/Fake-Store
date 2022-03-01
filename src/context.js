@@ -74,6 +74,11 @@ const AppProvider = ({ children }) => {
     return total;
   }, 0);
 
+  const shippingFee = 5.34;
+
+  let orderTotal = totalPrice + shippingFee;
+  orderTotal = parseFloat(orderTotal.toFixed(2));
+
   const removeProduct = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
@@ -93,6 +98,8 @@ const AppProvider = ({ children }) => {
         setFilter,
         loading,
         setLoading,
+        shippingFee,
+        orderTotal,
       }}
     >
       {children}

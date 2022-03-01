@@ -4,7 +4,8 @@ import CartItem from "../components/CartItem";
 import { Link } from "react-router-dom";
 
 const CartContainer = () => {
-  const { cart, setCart, totalPrice } = useGlobalContext();
+  const { cart, setCart, totalPrice, shippingFee, orderTotal } =
+    useGlobalContext();
 
   if (cart.length === 0) {
     return (
@@ -37,11 +38,11 @@ const CartContainer = () => {
       {/* cart footer */}
       <footer>
         <hr />
-        <div className="cart-total">
+        {/* <div className="cart-total">
           <h4>
             total <span>${totalPrice}</span>
           </h4>
-        </div>
+        </div> */}
         <div className="footer-btns">
           <button className="to-cart">
             <Link to="/products">continue shopping</Link>
@@ -51,6 +52,23 @@ const CartContainer = () => {
           </button>
         </div>
       </footer>
+      <div className="checkout-box">
+        <article className="checkout-content">
+          <h5>
+            subtotal : <span>${totalPrice}</span>
+          </h5>
+          <p>
+            shipping fee : <span>${shippingFee}</span>
+          </p>
+          <hr />
+          <h4>
+            order total : <span>${orderTotal}</span>
+          </h4>
+        </article>
+        <button className="checkout-btn">
+          <Link to="/checkout">proceed to checkout</Link>
+        </button>
+      </div>
     </section>
   );
 };
