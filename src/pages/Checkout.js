@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useGlobalContext } from "../context";
 import { PaystackButton } from "react-paystack";
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Checkout = () => {
+  const { ngnTotal } = useGlobalContext();
+  const { user } = useAuth0();
   const publicKey = "pk_test_e3992992a05fe03a93bd935c8a27c4eee2347379";
-  const amount = 1000000;
-  const [email, setEmail] = useState("ubongeffiong5@gmail.com");
-  const [name, setName] = useState("ubong");
-  const [phone, setPhone] = useState("08160698880");
+  const amount = ngnTotal * 500 + "00";
+  const [email, setEmail] = useState(user.email);
+  const [name, setName] = useState(user.name);
+  const [phone, setPhone] = useState("");
 
   const componentProps = {
     email,
@@ -16,8 +21,8 @@ const Checkout = () => {
     },
     publicKey,
     text: "Pay Now",
-    // onSuccess: () =>
-    //   alert("Thanks for doing business with us! Come back soon!!"),
+    onSuccess: () =>
+      alert("Thanks for doing business with us! Come back soon!!"),
     // onClose: () => alert("Wait! Don't leave :("),
   };
 
@@ -53,9 +58,7 @@ const Checkout = () => {
             />
           </div>
         </form>
-        <button>
-          <PaystackButton {...componentProps} />
-        </button>
+        <PaystackButton {...componentProps} className="paystackbtn" />
       </div>
     </div>
   );

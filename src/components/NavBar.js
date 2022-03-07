@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 import { links, social } from "../data";
+import SignInOut from "../SignInOut";
 
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -49,6 +50,7 @@ const NavBar = () => {
               </li>
             );
           })}
+          <SignInOut />
         </ul>
       </div>
       <ul className="social-icons">

@@ -27,7 +27,7 @@ const SingleProduct = () => {
       setLoading(false);
       setError(error.message);
     }
-  }, []);
+  }, [id]);
 
   const { title, image, price, description } = data;
 

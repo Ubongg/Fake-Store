@@ -78,6 +78,7 @@ const AppProvider = ({ children }) => {
 
   let orderTotal = totalPrice + shippingFee;
   orderTotal = parseFloat(orderTotal.toFixed(2));
+  let ngnTotal = parseInt(orderTotal);
 
   const removeProduct = (id) => {
     setCart(cart.filter((item) => item.id !== id));
@@ -100,6 +101,7 @@ const AppProvider = ({ children }) => {
         setLoading,
         shippingFee,
         orderTotal,
+        ngnTotal,
       }}
     >
       {children}

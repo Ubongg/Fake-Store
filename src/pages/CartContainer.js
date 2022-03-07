@@ -2,10 +2,12 @@ import React from "react";
 import { useGlobalContext } from "../context";
 import CartItem from "../components/CartItem";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const CartContainer = () => {
   const { cart, setCart, totalPrice, shippingFee, orderTotal } =
     useGlobalContext();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   if (cart.length === 0) {
     return (
@@ -65,9 +67,15 @@ const CartContainer = () => {
             order total : <span>${orderTotal}</span>
           </h4>
         </article>
-        <button className="checkout-btn">
-          <Link to="/checkout">proceed to checkout</Link>
-        </button>
+        {isAuthenticated ? (
+          <button className="checkout-btn">
+            <Link to="/checkout">proceed to checkout</Link>
+          </button>
+        ) : (
+          <button className="checkout-btn" onClick={() => loginWithRedirect()}>
+            <a href="">LogIn</a>
+          </button>
+        )}
       </div>
     </section>
   );
