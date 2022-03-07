@@ -50,7 +50,9 @@ const NavBar = () => {
               </li>
             );
           })}
-          <SignInOut />
+          <li className="log">
+            <SignInOut />
+          </li>
         </ul>
       </div>
       <ul className="social-icons">

@@ -86,13 +86,13 @@ li {
   text-transform: capitalize;
   letter-spacing: 0.1rem;
   display: block;
-  margin: 3rem 2.6rem;
+  margin: 3rem 1.5rem;
   transition: var(--mainTransition);
   text-align: start;
 }
 .links a:hover {
   color: var(--primaryColor);
-  margin-left: 2rem;
+  margin-left: 1.2rem;
 }
 .social-icons {
   display: none;
@@ -104,6 +104,21 @@ li {
 }
 .show-container {
   height: 10rem;
+}
+.log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.log button {
+  text-transform: uppercase;
+  color: var(--mainWhite);
+  background: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+  border-radius: var(--radius);
+  padding: 10px;
+  transition: var(--mainTransition);
+  margin: 0 1.5rem;
 }
 
 /* home page */
@@ -782,8 +797,6 @@ hr {
   border: 1px solid var(--primaryColor);
 }
 
-/* checkout */
-
 /* footer */
 .footer {
   background: var(--mainBlack);
@@ -833,86 +846,66 @@ hr {
   padding: 10px;
 }
 /* checkout page */
-  .container {
-    display: flex;
-    flex-direction: row;
-    margin: 100px auto;
-    width: 635px;
-    height: 430px;
-    background: white;
-    /* box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); */
-    border-radius: var(--radius);
-    text-align: center;
-    letter-spacing: 0.1rem;
-    border: 1px solid var(--dark-blue);
-  }
-  /* .item {
-    width: 50%;
-    position: relative;
-  }
-  .item-image {
-    height: 430px;
-    width: 100%;
-    object-fit: fill;
-    overflow: hidden;
-  }
-  .overlay-effect {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.2;
-    background-color: #303030;
-    overflow: hidden;
-    z-index: 1;
-  } */
-  .checkout {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 430px;
-    width: 50%;
-  }
-  .checkout-form {
-    padding: 20px 20px;
-  }
-  .checkout-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  .checkout-field label {
-    text-align: left;
-    color: var(--dark-blue);
-    font-size: 10px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-  }
-  .checkout-field input {
-    background-color: transparent;
-    border: 1px solid var(--dark-blue);
-    border-radius: 5px;
-    color: var(--dark-blue);
-    height: 35px;
-  }
-  .paystack-button {
-    cursor: pointer;
-    text-align: center;
-    font-size: 10px;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    background-color: #bfbfbf;
-    font-weight: bold;
-    color: #e0eafc;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    height: 45px;
-    margin-top: 40px;
-  }
+.checkout {
+  height: 90vh;
+}
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  width: 635px;
+  height: auto;
+  background: white;
+  /* box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); */
+  border-radius: var(--radius);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  border: 1px solid #bcccdc;
+  width: 80%;
+  padding: 30px;
+  max-width: 800px;
+}
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.checkout-field label {
+  text-align: left;
+  color: var(--mainBlue);
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.checkout-field input {
+  background-color: transparent;
+  border: 1px solid #bcccdc;
+  border-radius: var(--radius);
+  color: var(--mainBlue);
+  height: 40px;
+  padding: 10px;
+}
+.paystackbtn {
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  text-transform: uppercase;
+  background-color: var(--dark-blue);
+  font-weight: bold;
+  color: #e0eafc;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 45px;
+  transition: var(--mainTransition);
+  margin-bottom: 10px;
+}
+.paystackbtn:hover {
+  background-color: var(--primaryColor);
+  color: var(--mainBlack);
+}
 
 /* 380px below */
 @media screen and (max-width: 380px) {
@@ -947,7 +940,7 @@ hr {
     display: flex;
   }
   .links a {
-    padding-top: 6px;
+    padding-top: 5px;
     color: var(--mainBlack);
     margin-right: 15px;
   }

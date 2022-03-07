@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -10,6 +12,12 @@ import Footer from "./components/Footer";
 import Checkout from "./pages/Checkout";
 
 function App() {
+  const { isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
     <div className="app">
       <NavBar />
