@@ -846,13 +846,13 @@ hr {
   padding: 10px;
 }
 /* checkout page */
-.checkout {
+/* .checkout {
   height: 90vh;
-}
+} */
 .checkout-form {
   display: flex;
   flex-direction: column;
-  margin: 100px auto;
+  margin: 100px auto 200px auto;
   width: 635px;
   height: auto;
   background: white;
