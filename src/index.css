@@ -470,13 +470,16 @@ li {
 
 /* single product page */
 .single-product {
-  padding: 70px 28px;
+  padding: 68px 28px;
 }
 .single-product .section {
   display: flex;
   flex-direction: column;
 }
 .back-btn {
+  display: flex;
+  justify-content: left;
+  align-items: center;
   border: none;
   background: transparent;
   margin-bottom: 30px;
