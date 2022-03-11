@@ -849,10 +849,23 @@ hr {
 /* .checkout {
   height: 90vh;
 } */
+.checkout-info {
+  display: flex;
+  flex-direction: column;
+  margin: 70px auto 0 auto;
+  width: 635px;
+  letter-spacing: 0.1rem;
+  width: 80%;
+  max-width: 800px;
+}
+.checkout-info h4 {
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
 .checkout-form {
   display: flex;
   flex-direction: column;
-  margin: 100px auto 200px auto;
+  margin: 40px auto 250px auto;
   width: 635px;
   height: auto;
   background: white;
@@ -1090,5 +1103,17 @@ hr {
   .single-img-bx {
     height: 100%;
     width: 100%;
+  }
+  .checkout-info h4 {
+    font-size: 1.5rem;
+  }
+  .checkout-info p {
+    font-size: 1.25rem;
+  }
+  .checkout-field label {
+    font-size: 1rem;
+  }
+  .checkout-field input {
+    font-size: 1rem;
   }
 }

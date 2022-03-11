@@ -4,7 +4,7 @@ import { PaystackButton } from "react-paystack";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Checkout = () => {
-  const { ngnTotal } = useGlobalContext();
+  const { ngnTotal, orderTotal } = useGlobalContext();
   const { user } = useAuth0();
   const publicKey = "pk_test_e3992992a05fe03a93bd935c8a27c4eee2347379";
   const amount = ngnTotal * 500 + "00";
@@ -28,6 +28,10 @@ const Checkout = () => {
 
   return (
     <div className="checkout">
+      <div className="checkout-info">
+        <h4>Hello, {user.name}</h4>
+        <p>Your total is ${orderTotal}</p>
+      </div>
       <div className="checkout-form">
         <form>
           <div className="checkout-field">
