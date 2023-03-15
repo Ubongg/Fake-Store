@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 import { PaystackButton } from "react-paystack";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-  const { ngnTotal, orderTotal } = useGlobalContext();
+  const navigate = useNavigate();
+  const { ngnTotal, orderTotal, setCart } = useGlobalContext();
   const { user } = useAuth0();
   const publicKey = "pk_test_e3992992a05fe03a93bd935c8a27c4eee2347379";
   const amount = ngnTotal * 500 + "00";
@@ -21,8 +23,11 @@ const Checkout = () => {
     },
     publicKey,
     text: "Pay Now",
-    onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
+    onSuccess: () => {
+      navigate("/");
+      setCart([]);
+    },
+
     // onClose: () => alert("Wait! Don't leave :("),
   };
 
